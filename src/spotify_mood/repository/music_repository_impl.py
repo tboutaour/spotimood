@@ -1,5 +1,5 @@
 from spotify_mood.repository.resource.spotify_resource import SpotifyResource
-from spotify_mood.repository.playlist_repository import MusicRepository
+from spotify_mood.repository.music_repository import MusicRepository
 from pandas import DataFrame
 
 
@@ -18,21 +18,19 @@ class MusicRepositoryImpl(MusicRepository):
     def get_feature_dataframe_from_playlists(self, user_id) -> DataFrame:
         playlist_ids = [pl['id'] for pl in self.get_playlists(user_id)['items']]
         track_ids = [tr for pl_id in playlist_ids for tr in self.get_songs_by_playlist(pl_id)]
-        songs_features = [self.get_songs_of_playlist(tr_id['playlist_id'], tr_id['track_id']) for tr_id in track_ids]
+        songs_features = [self.get_songs_of_playlist(tr_id) for tr_id in track_ids[:100]]
         return DataFrame.from_records(songs_features)
 
-    def get_songs_of_playlist(self, pl_id, track_id):
-        feature_result = self.get_feature_by_song(track_id)
-        feature_result['playlist_id'] = pl_id
+    def get_songs_of_playlist(self, track):
+
+        feature_result = self.get_feature_by_song(track['track_id'])
+        feature_result['playlist_id'] = track['playlist_id']
+        feature_result['added_at'] = track['added_at']
         return feature_result
 
     def get_songs_by_playlist(self, pl_id: str):
         playlist_items = self.spotify_connection.playlist_items(pl_id,
-                                                                fields='items.added_at, '
-                                                                       'items.track.id, '
-                                                                       'items.track.name, '
-                                                                       'items.track.artists.name, '
-                                                                       'items.track.duration_ms')
+                                                                fields='items.added_at, items.track.id, items.track.name, items.track.artists.name, items.track.duration_ms')
         return [{"playlist_id": pl_id,
                  "added_at": item['added_at'],
                  "track_id": item['track']['id'],

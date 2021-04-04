@@ -10,5 +10,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (spotify-mood)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

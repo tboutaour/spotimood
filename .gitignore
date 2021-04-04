@@ -2,3 +2,8 @@
 /build/
 /dist/
 *egg*
+/venv
+/src/test/repository/input/
+/src/test/repository/results/
+.cache
+.idea

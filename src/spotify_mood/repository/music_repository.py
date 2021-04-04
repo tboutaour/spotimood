@@ -26,4 +26,3 @@ class MusicRepository(abc.ABC):
     @abc.abstractmethod
     def get_feature_by_song(self, track_id: str):
         pass
-
