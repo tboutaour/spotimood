@@ -4,5 +4,5 @@ from pandas import DataFrame
 
 class PredictionRepository(abc.ABC):
     @abc.abstractmethod
-    def store_prediction_dataframe(self, df, table):
+    def store_prediction_dataframe(self, df):
         pass

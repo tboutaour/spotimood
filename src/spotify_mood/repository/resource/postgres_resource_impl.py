@@ -2,10 +2,16 @@ from spotify_mood.repository.resource.postgres_resource import PostgresResource
 from pyspark.sql import DataFrame
 import psycopg2
 
+import psycopg2.extras as extras
 
 class PostgresResourceImpl(PostgresResource):
 
     def __init__(self, host, db, user, password):
+        self.host = host
+        self.db = db
+        self.user = user
+        self.password = password
+        self.port = "5432"
         self.conn = psycopg2.connect(
             host=host,
             database=db,
@@ -35,25 +41,13 @@ class PostgresResourceImpl(PostgresResource):
         Using cursor.mogrify() to build the bulk insert query
         then cursor.execute() to execute the query
         """
-        # Create a list of tupples from the dataframe values
-        tuples = [tuple(x) for x in df.to_numpy()]
-        # Comma-separated dataframe columns
-        cols = ','.join(list(df.columns))
-        # SQL quert to execute
-        cursor = self.conn.cursor()
-        values = [cursor.mogrify("(%s,%s,%s)", tup).decode('utf8') for tup in tuples]
-        query = "INSERT INTO %s(%s) VALUES " % (table, cols) + ",".join(values)
+        df.write\
+            .mode('append') \
+            .option("driver", "org.postgresql.Driver")\
+            .jdbc(f"jdbc:postgresql://{self.host}:{self.port}/{self.db}",
+                  table,
+                  properties={"user": self.user, "password": self.password})
 
-        try:
-            cursor.execute(query, tuples)
-            self.conn.commit()
-        except (Exception, psycopg2.DatabaseError) as error:
-            print("Error: %s" % error)
-            self.conn.rollback()
-            cursor.close()
-            return 1
-        print("execute_mogrify() done")
-        cursor.close()
 
     def update_many(self, table, updates, conditions):
         return self.__execute_query(f"""

@@ -7,3 +7,4 @@
 /src/test/repository/results/
 .cache
 .idea
+/src/spotify_mood/conf/

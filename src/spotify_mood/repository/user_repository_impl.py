@@ -1,10 +1,6 @@
-from typing import Tuple
-
 from spotify_mood.repository.resource.postgres_resource import PostgresResource
 from spotify_mood.repository.resource.spotify_resource import SpotifyResource
 from spotify_mood.repository.user_repository import UserRepository
-import pytz
-from datetime import timedelta, datetime
 
 USER_STATUS_TABLE_NAME = 'spotify_web_userstatus'
 SPOTIFY_EXPIRE_TIME = 3600

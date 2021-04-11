@@ -1,8 +1,7 @@
 from spotify_mood.repository.resource.model_resource import ModelResource
-import numpy as np
 import pickle
-import sklearn
-import os
+from os.path import dirname, abspath
+
 
 class ModelResourceImpl(ModelResource):
 
@@ -12,8 +11,8 @@ class ModelResourceImpl(ModelResource):
     def load_model(self):
         pass
 
-    def predict(self, data):
+    def predict(self, data) -> int:
         return self.model.predict(data)
 
     def __import_model(self, path):
-        return pickle.load(open(os.getcwd() + '/' + path, "rb"))
+        return pickle.load(open(dirname(dirname(dirname(abspath(__file__)))) + '/' + path, "rb"))

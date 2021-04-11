@@ -7,5 +7,5 @@ class ModelResource(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def predict(self, data):
+    def predict(self, data) -> int:
         pass

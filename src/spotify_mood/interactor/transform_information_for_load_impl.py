@@ -1,10 +1,9 @@
-from pandas import DataFrame
+from pyspark.sql import DataFrame
+from pyspark.sql.functions import lit
 from spotify_mood.interactor.transform_information_for_load import TransformInformationForLoad
+import datetime
 
 
 class TransformInformationForLoadImpl(TransformInformationForLoad):
     def apply(self, data: DataFrame) -> DataFrame:
-        pass
-        # TODO Transform headers
-        # TODO put classification time
-        # TODO filter columns
+        return data.withColumn('classified_at', lit(datetime.datetime.utcnow()))

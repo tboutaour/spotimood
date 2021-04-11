@@ -18,9 +18,10 @@ class MyTestCase(unittest.TestCase):
                                                  password='postgres')
         spotify_resource = SpotifyResourceImpl(client_id=client_id,
                                                client_secret=client_secret,
+                                               backend_user_id=backend_user_id,
                                                postgres_resource=postgres_resource)
         user_repository = UserRepositoryImpl(spotify_resource=spotify_resource)
-        result = user_repository.get_current_user_information(backend_user_id)
+        result = user_repository.get_current_user_information()
         pprint.pprint(result)
 
     def test_get_user_active(self):

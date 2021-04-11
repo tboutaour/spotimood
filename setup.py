@@ -5,6 +5,7 @@ from os.path import join
 
 from setuptools import find_packages, setup
 
+
 def read(*names, **kwargs):
     return io.open(
         join(dirname(__file__), *names),
@@ -17,10 +18,14 @@ module_name = project_name
 regex_found_badges = re.compile('^.. start-badges.*^.. end-badges', re.M | re.S)
 dependencies = [
     'pyspark==3.0.1',
-    'pyarrow==0.11.1,',
+    'pyarrow==2.0.0',
     'spotipy',
     'psycopg2-binary',
-    'psycopg2'
+    'py4j==0.10.9',
+    'psycopg2',
+    'numpy==1.19.5',
+    'pandas',
+    'scikit-learn'
 ]
 
 setup(

@@ -1,1 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="0" errors="0" failures="0" skip="0"></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="3" errors="2" failures="0" skip="0"><testcase classname="test.interactor.union_dataframes_test.UnionDataframe" name="test_union" time="5.323"><system-out><![CDATA[+---+---+
+|  a|  b|
++---+---+
+|  1|  3|
+|  1|  3|
+|  1|  3|
++---+---+
+
+]]></system-out></testcase><testcase classname="test.pipeline.playlist_mood_classifier_pipeline_test.PlaylistMoodeClassifierPipelineTest" name="test_pipeline" time="3.722"><error type="builtins.ImportError" message="PyArrow &gt;= 0.15.1 must be installed; however, your version was 0.11.1."><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pipeline/playlist_mood_classifier_pipeline_test.py", line 48, in test_pipeline
+    track_classifier.run(datetime.datetime(2021, 4, 9), datetime.datetime(2021, 4, 9))
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/pipeline/playlist_mood_tracker_pipeline.py", line 33, in run
+    predicted_df = self.model_repository.get_prediction(feature_track_df)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/repository/model_repository_impl.py", line 33, in get_prediction
+    pred = pandas_udf(__predict_udf, returnType=LongType())
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/pyspark/sql/pandas/functions.py", line 325, in pandas_udf
+    require_minimum_pyarrow_version()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/pyspark/sql/pandas/utils.py", line 57, in require_minimum_pyarrow_version
+    "your version was %s." % (minimum_pyarrow_version, pyarrow.__version__))
+ImportError: PyArrow >= 0.15.1 must be installed; however, your version was 0.11.1.
+]]></error><system-err><![CDATA[/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/sklearn/base.py:315: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.0 when using version 0.24.1. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/sklearn/base.py:315: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.0 when using version 0.24.1. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+]]></system-err></testcase><testcase classname="test.pipeline.recent_played_mood_classifier_pipeline_test.PlaylistMoodeClassifierPipelineTest" name="test_pipeline" time="0.166"><error type="builtins.ImportError" message="PyArrow &gt;= 0.15.1 must be installed; however, your version was 0.11.1."><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pipeline/recent_played_mood_classifier_pipeline_test.py", line 47, in test_pipeline
+    track_classifier.run(datetime.datetime(2021, 4, 11, 15), datetime.datetime(2021, 4, 11, 16))
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/pipeline/playlist_mood_tracker_pipeline.py", line 33, in run
+    predicted_df = self.model_repository.get_prediction(feature_track_df)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/repository/model_repository_impl.py", line 33, in get_prediction
+    pred = pandas_udf(__predict_udf, returnType=LongType())
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/pyspark/sql/pandas/functions.py", line 325, in pandas_udf
+    require_minimum_pyarrow_version()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/pyspark/sql/pandas/utils.py", line 57, in require_minimum_pyarrow_version
+    "your version was %s." % (minimum_pyarrow_version, pyarrow.__version__))
+ImportError: PyArrow >= 0.15.1 must be installed; however, your version was 0.11.1.
+]]></error></testcase></testsuite>

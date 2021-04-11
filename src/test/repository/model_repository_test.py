@@ -2,9 +2,7 @@ import unittest
 
 from spotify_mood.repository.model_repository_impl import ModelRepositoryImpl
 from spotify_mood.repository.resource.model_resource_impl import ModelResourceImpl
-from spotify_mood.repository.resource.postgres_resource_impl import PostgresResourceImpl
-from spotify_mood.repository.user_repository_impl import UserRepositoryImpl
-from spotify_mood.repository.resource.spotify_resource_impl import SpotifyResourceImpl
+from spotify_mood.conf.config import MODEL_PATH
 import pprint
 import pandas as pd
 
@@ -12,7 +10,7 @@ import pandas as pd
 class ModelTestCase(unittest.TestCase):
 
     def test_model(self):
-        model_resource = ModelResourceImpl(path='../assets/ml_model.sav')
+        model_resource = ModelResourceImpl(path=MODEL_PATH)
         model_repository = ModelRepositoryImpl(model_resource)
 
         input_data = [{

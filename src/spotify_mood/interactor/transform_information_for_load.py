@@ -1,5 +1,5 @@
 import abc
-from pandas import DataFrame
+from pyspark.sql import DataFrame
 
 
 class TransformInformationForLoad(abc.ABC):
