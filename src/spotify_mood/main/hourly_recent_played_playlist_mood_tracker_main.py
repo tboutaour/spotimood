@@ -18,7 +18,7 @@ from spotify_mood.repository.user_repository_impl import UserRepositoryImpl
 def main():
     args = Arguments()
     spark = SparkSession.builder.appName("hourly-playlist-mood-tracker").getOrCreate()
-    spark.sparkContext.setCheckpointDir(LOCAL_TEMP_CHECKPOINT)
+    spark.sparkContext.setCheckpointDir(GCS_TEMP_CHECKPOINT)
 
     start_date = args.get_start_date()
     end_date = args.get_end_date()

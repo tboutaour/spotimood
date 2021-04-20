@@ -44,6 +44,6 @@ class PlaylistMoodeClassifierPipelineTest(PySparkTestBase):
             transform_information_for_load=transform_information_for_load
         )
 
-        track_classifier.run(datetime.datetime(2021, 4, 11, 15), datetime.datetime(2021, 4, 11, 16))
+        track_classifier.run(datetime.datetime(2021, 4, 15, 15), datetime.datetime(2021, 4, 15, 16))
 
 

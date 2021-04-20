@@ -15,10 +15,6 @@ from spotify_mood.repository.resource.spotify_resource_impl import SpotifyResour
 from spotify_mood.repository.user_repository_impl import UserRepositoryImpl
 from test.pyspark_test_base import PySparkTestBase
 
-client_id = '4a3108858bb040cc8988f1214539a0a7'
-client_secret = '42a4446973f64c90b30beacc49c3d112'
-backend_user_id = 'pqor0kh7srwmehv50gan5saqi19miz8b'
-
 
 class SpotifyDataIngestionPipelineTest(PySparkTestBase):
     def test_pipeline(self):
@@ -54,4 +50,4 @@ class SpotifyDataIngestionPipelineTest(PySparkTestBase):
                                                                filter_by_date=filter_by_date,
                                                                prepare_dataframe_for_load=prepare_dataframe_for_load)
 
-        data_ingestion_pipeline.run(datetime.datetime(2021, 4, 11, 15), datetime.datetime(2021, 4, 11, 16))
+        data_ingestion_pipeline.run(datetime.datetime(2021, 4, 15, 7), datetime.datetime(2021, 4, 15, 16))

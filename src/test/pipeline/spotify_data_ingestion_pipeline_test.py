@@ -14,7 +14,6 @@ from test.pyspark_test_base import PySparkTestBase
 from spotify_mood.conf.config import *
 
 
-
 class SpotifyDataIngestionPipelineTest(PySparkTestBase):
     def test_pipeline(self):
         avro_resource = AvroResourceImpl(spark=self.spark)

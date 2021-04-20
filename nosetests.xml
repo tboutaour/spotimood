@@ -1,45 +1,281 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="3" errors="2" failures="0" skip="0"><testcase classname="test.interactor.union_dataframes_test.UnionDataframe" name="test_union" time="5.323"><system-out><![CDATA[+---+---+
-|  a|  b|
-+---+---+
-|  1|  3|
-|  1|  3|
-|  1|  3|
-+---+---+
-
-]]></system-out></testcase><testcase classname="test.pipeline.playlist_mood_classifier_pipeline_test.PlaylistMoodeClassifierPipelineTest" name="test_pipeline" time="3.722"><error type="builtins.ImportError" message="PyArrow &gt;= 0.15.1 must be installed; however, your version was 0.11.1."><![CDATA[Traceback (most recent call last):
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="11" errors="11" failures="0" skip="0"><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pyspark'"><![CDATA[Traceback (most recent call last):
   File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
     yield
   File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
     testMethod()
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pipeline/playlist_mood_classifier_pipeline_test.py", line 48, in test_pipeline
-    track_classifier.run(datetime.datetime(2021, 4, 9), datetime.datetime(2021, 4, 9))
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/pipeline/playlist_mood_tracker_pipeline.py", line 33, in run
-    predicted_df = self.model_repository.get_prediction(feature_track_df)
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/repository/model_repository_impl.py", line 33, in get_prediction
-    pred = pandas_udf(__predict_udf, returnType=LongType())
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/pyspark/sql/pandas/functions.py", line 325, in pandas_udf
-    require_minimum_pyarrow_version()
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/pyspark/sql/pandas/utils.py", line 57, in require_minimum_pyarrow_version
-    "your version was %s." % (minimum_pyarrow_version, pyarrow.__version__))
-ImportError: PyArrow >= 0.15.1 must be installed; however, your version was 0.11.1.
-]]></error><system-err><![CDATA[/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/sklearn/base.py:315: UserWarning: Trying to unpickle estimator DecisionTreeClassifier from version 0.24.0 when using version 0.24.1. This might lead to breaking code or invalid results. Use at your own risk.
-  UserWarning)
-/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/sklearn/base.py:315: UserWarning: Trying to unpickle estimator RandomForestClassifier from version 0.24.0 when using version 0.24.1. This might lead to breaking code or invalid results. Use at your own risk.
-  UserWarning)
-]]></system-err></testcase><testcase classname="test.pipeline.recent_played_mood_classifier_pipeline_test.PlaylistMoodeClassifierPipelineTest" name="test_pipeline" time="0.166"><error type="builtins.ImportError" message="PyArrow &gt;= 0.15.1 must be installed; however, your version was 0.11.1."><![CDATA[Traceback (most recent call last):
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/interactor/union_dataframes_test.py", line 1, in <module>
+    from pyspark.sql.types import StructType, StructField, IntegerType
+ModuleNotFoundError: No module named 'pyspark'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pyspark'"><![CDATA[Traceback (most recent call last):
   File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
     yield
   File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
     testMethod()
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pipeline/recent_played_mood_classifier_pipeline_test.py", line 47, in test_pipeline
-    track_classifier.run(datetime.datetime(2021, 4, 11, 15), datetime.datetime(2021, 4, 11, 16))
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/pipeline/playlist_mood_tracker_pipeline.py", line 33, in run
-    predicted_df = self.model_repository.get_prediction(feature_track_df)
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/repository/model_repository_impl.py", line 33, in get_prediction
-    pred = pandas_udf(__predict_udf, returnType=LongType())
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/pyspark/sql/pandas/functions.py", line 325, in pandas_udf
-    require_minimum_pyarrow_version()
-  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/pyspark/sql/pandas/utils.py", line 57, in require_minimum_pyarrow_version
-    "your version was %s." % (minimum_pyarrow_version, pyarrow.__version__))
-ImportError: PyArrow >= 0.15.1 must be installed; however, your version was 0.11.1.
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pipeline/playlist_mood_classifier_pipeline_test.py", line 4, in <module>
+    from spotify_mood.interactor.prepare_df_for_prediction_impl import PrepareDfForPredictionImpl
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/interactor/prepare_df_for_prediction_impl.py", line 1, in <module>
+    from pyspark.sql import DataFrame
+ModuleNotFoundError: No module named 'pyspark'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pyspark'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pipeline/recent_played_mood_classifier_pipeline_test.py", line 4, in <module>
+    from spotify_mood.interactor.prepare_recent_played_df_for_prediction_impl import PrepareRecentPlayedDfForPredictionImpl
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/interactor/prepare_recent_played_df_for_prediction_impl.py", line 1, in <module>
+    from pyspark.sql import DataFrame
+ModuleNotFoundError: No module named 'pyspark'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pyspark'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pipeline/spotify_data_ingestion_pipeline_test.py", line 3, in <module>
+    from spotify_mood.interactor.spotify_ingestion.filter_by_date_impl import FilterByDateImpl
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/interactor/spotify_ingestion/filter_by_date_impl.py", line 1, in <module>
+    from pyspark.sql import DataFrame
+ModuleNotFoundError: No module named 'pyspark'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pyspark'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pipeline/spotify_recent_played_data_ingestion_pipeline_test.py", line 4, in <module>
+    from spotify_mood.interactor.spotify_recent_played_ingestion.filter_by_date_impl import FilterByDateImpl
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/interactor/spotify_recent_played_ingestion/filter_by_date_impl.py", line 1, in <module>
+    from pyspark.sql import DataFrame
+ModuleNotFoundError: No module named 'pyspark'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pandas'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/repository/internal_music_repository_test.py", line 3, in <module>
+    from pandas import DataFrame
+ModuleNotFoundError: No module named 'pandas'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pandas'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/repository/model_repository_test.py", line 3, in <module>
+    from spotify_mood.repository.model_repository_impl import ModelRepositoryImpl
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/repository/model_repository_impl.py", line 1, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pyspark'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/repository/music_recent_played_repository_test.py", line 5, in <module>
+    from spotify_mood.repository.music_recent_played_repository_impl import MusicRecentPlayedRepositoryImpl
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/repository/music_recent_played_repository_impl.py", line 1, in <module>
+    from pyspark.sql import SparkSession
+ModuleNotFoundError: No module named 'pyspark'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pandas'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/repository/music_repository_test.py", line 3, in <module>
+    from pandas import DataFrame
+ModuleNotFoundError: No module named 'pandas'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pyspark'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/repository/user_repository_test.py", line 3, in <module>
+    from spotify_mood.repository.resource.postgres_resource_impl import PostgresResourceImpl
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/repository/resource/postgres_resource_impl.py", line 1, in <module>
+    from spotify_mood.repository.resource.postgres_resource import PostgresResource
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/spotify_mood/repository/resource/postgres_resource.py", line 2, in <module>
+    from pyspark.sql import DataFrame
+ModuleNotFoundError: No module named 'pyspark'
+]]></error></testcase><testcase classname="nose.failure.Failure" name="runTest" time="0.000"><error type="builtins.ModuleNotFoundError" message="No module named 'pyspark'"><![CDATA[Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 59, in testPartExecutor
+    yield
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py", line 628, in run
+    testMethod()
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/failure.py", line 39, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/.tox/py37/lib/python3.7/site-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 696, in _load
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/tonibous/Documents/2-IMF/10-Trabajo-final-master/02-Repositories/spotify-mood/src/test/pyspark_test_base.py", line 5, in <module>
+    from pyspark.sql import DataFrame
+ModuleNotFoundError: No module named 'pyspark'
 ]]></error></testcase></testsuite>

@@ -1,8 +1,5 @@
-from spotify_mood.repository.resource.postgres_resource import PostgresResource
-from pyspark.sql import DataFrame
 import psycopg2
-
-import psycopg2.extras as extras
+from spotify_mood.repository.resource.postgres_resource import PostgresResource
 
 class PostgresResourceImpl(PostgresResource):
 

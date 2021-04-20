@@ -1,16 +1,14 @@
 from pyspark.sql import SparkSession
 
+from spotify_mood.conf.config import *
 from spotify_mood.interactor.spotify_recent_played_ingestion.filter_by_date_impl import FilterByDateImpl
 from spotify_mood.interactor.spotify_recent_played_ingestion.prepare_dataframe_for_load_impl import \
     PrepareDataframeForLoadImpl
 from spotify_mood.interactor.union_dataframes_impl import UnionDataframesImpl
 from spotify_mood.main.arguments import Arguments
-from spotify_mood.conf.config import *
 from spotify_mood.pipeline.spotify_data_ingestion_pipeline import SpotifyDataIngestionPipeline
-from spotify_mood.repository.internal_music_repository_impl import InternalMusicRepositoryImpl
 from spotify_mood.repository.internal_recent_played_music_repository_impl import InternalRecentPlayedMusicRepositoryImpl
 from spotify_mood.repository.music_recent_played_repository_impl import MusicRecentPlayedRepositoryImpl
-from spotify_mood.repository.music_repository_impl import MusicRepositoryImpl
 from spotify_mood.repository.resource.avro_resource_impl import AvroResourceImpl
 from spotify_mood.repository.resource.postgres_resource_impl import PostgresResourceImpl
 from spotify_mood.repository.resource.spotify_resource_impl import SpotifyResourceImpl
@@ -20,7 +18,7 @@ from spotify_mood.repository.user_repository_impl import UserRepositoryImpl
 def main():
     args = Arguments()
     spark = SparkSession.builder.appName("recent-played-pipeline").getOrCreate()
-    spark.sparkContext.setCheckpointDir(LOCAL_TEMP_CHECKPOINT)
+    spark.sparkContext.setCheckpointDir(GCS_TEMP_CHECKPOINT)
 
     start_date = args.get_start_date()
     end_date = args.get_end_date()
