@@ -1,16 +1,17 @@
+import pprint
 import unittest
 
+import pandas as pd
+
+from spotify_mood.conf.config import MODEL_PATH, GCS_PROJECT_ID
 from spotify_mood.repository.model_repository_impl import ModelRepositoryImpl
 from spotify_mood.repository.resource.model_resource_impl import ModelResourceImpl
-from spotify_mood.conf.config import MODEL_PATH
-import pprint
-import pandas as pd
 
 
 class ModelTestCase(unittest.TestCase):
 
     def test_model(self):
-        model_resource = ModelResourceImpl(path=MODEL_PATH)
+        model_resource = ModelResourceImpl(project=GCS_PROJECT_ID, path=MODEL_PATH)
         model_repository = ModelRepositoryImpl(model_resource)
 
         input_data = [{

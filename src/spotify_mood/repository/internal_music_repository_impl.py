@@ -3,6 +3,7 @@ from spotify_mood.repository.internal_music_repository import InternalMusicRepos
 from spotify_mood.repository.resource.avro_resource import AvroResource
 from spotify_mood.conf.config import DATA_LANDING
 from datetime import datetime, timedelta
+from pyspark.sql.functions import col, lit
 
 
 class InternalMusicRepositoryImpl(InternalMusicRepository):
@@ -11,8 +12,11 @@ class InternalMusicRepositoryImpl(InternalMusicRepository):
         self.avro_resource = avro_resource
 
     def read_track_feature(self, start_day, end_day) -> DataFrame:
-        paths = self._get_read_path(start_day, end_day)
-        return self.avro_resource.read(DATA_LANDING)
+        df = self.avro_resource.read(DATA_LANDING)
+        return df.filter(
+            (col("added_at") >= lit(start_day.strftime("%Y-%m-%d"))) & (
+                    col("added_at") < lit(end_day.strftime("%Y-%m-%d"))))
+
 
     def _get_read_path(self, start_date: datetime, end_date: datetime):
         for date in self._daterange(start_date, end_date + timedelta(days=1)):

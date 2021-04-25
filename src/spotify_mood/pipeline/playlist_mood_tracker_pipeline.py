@@ -37,3 +37,4 @@ class PlaylistMoodTrackerPipeline:
 
         # Save prediction
         self.prediction_repository.store_prediction_dataframe(main_df)
+        print(f"Final recount: {int(main_df.count())}")

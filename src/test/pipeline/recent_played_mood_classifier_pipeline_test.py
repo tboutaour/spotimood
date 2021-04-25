@@ -26,7 +26,7 @@ class PlaylistMoodeClassifierPipelineTest(PySparkTestBase):
                                                backend_user_id=BACKENT_USER_ID,
                                                postgres_resource=postgres_resource)
         avro_resource = AvroResourceImpl(self.spark)
-        model_resource = ModelResourceImpl(path=MODEL_PATH)
+        model_resource = ModelResourceImpl(project=GCS_PROJECT_ID, path=MODEL_PATH)
         user_repository = UserRepositoryImpl(spotify_resource)
         internal_music_repository = InternalRecentPlayedMusicRepositoryImpl(avro_resource=avro_resource)
         model_repository = ModelRepositoryImpl(model_resource)

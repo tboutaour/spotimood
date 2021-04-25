@@ -32,7 +32,7 @@ def main():
                                            postgres_resource=postgres_resource)
 
     avro_resource = AvroResourceImpl(spark=spark)
-    model_resource = ModelResourceImpl(path=MODEL_PATH)
+    model_resource = ModelResourceImpl(project=GCS_PROJECT_ID, path=MODEL_PATH)
     user_repository = UserRepositoryImpl(spotify_resource)
     internal_music_repository = InternalMusicRepositoryImpl(avro_resource=avro_resource)
     model_repository = ModelRepositoryImpl(model_resource)

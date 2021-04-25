@@ -1,7 +1,6 @@
 import pandas as pd
 from pyspark.sql import DataFrame
-from pyspark.sql.functions import lit, col
-from pyspark.sql.pandas.functions import pandas_udf, PandasUDFType
+from pyspark.sql.functions import lit, col, pandas_udf
 from pyspark.sql.types import DoubleType, IntegerType, StructType, StructField, LongType
 from spotify_mood.repository.model_repository import ModelRepository
 from spotify_mood.repository.resource.model_resource import ModelResource

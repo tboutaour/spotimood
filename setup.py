@@ -22,10 +22,12 @@ dependencies = [
     'spotipy',
     'psycopg2-binary',
     'py4j==0.10.9',
-    'psycopg2',
     'numpy==1.19.5',
     'pandas',
-    'scikit-learn'
+    'scikit-learn',
+    'google',
+    'google-cloud-storage',
+    'gcsfs'
 ]
 
 setup(

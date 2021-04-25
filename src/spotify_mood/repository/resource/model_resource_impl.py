@@ -1,11 +1,12 @@
 from spotify_mood.repository.resource.model_resource import ModelResource
 import pickle
-from os.path import dirname, abspath
+import gcsfs
 
 
 class ModelResourceImpl(ModelResource):
 
-    def __init__(self, path):
+    def __init__(self, project, path):
+        self.storage_client = gcsfs.GCSFileSystem(project=project)
         self.model = self.__import_model(path)
 
     def load_model(self):
@@ -15,4 +16,6 @@ class ModelResourceImpl(ModelResource):
         return self.model.predict(data)
 
     def __import_model(self, path):
-        return pickle.load(open(dirname(dirname(dirname(abspath(__file__)))) + '/' + path, "rb"))
+        with self.storage_client.open(path, 'rb') as file:
+            r = pickle.load(file)
+        return r
